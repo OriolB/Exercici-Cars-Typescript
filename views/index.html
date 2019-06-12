@@ -1,0 +1,117 @@
+<head>
+    <script src="../models/car.js"></script>
+    <script src="../models/wheel.js"></script>
+    <script src="../controllers/controller.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="css/cars.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="center">Ejercicio Vehículos</h1>
+            <div class="mt-5" id="fcar">
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputplate">Plate</label>
+                        <input type="text" class="form-control" id="plate" name="plate" value="3499JJJ">
+                        <label class="form-text text-danger" id="plateHelp"></label>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputbrand">Brand</label>
+                        <input type="text" class="form-control" id="brand" name="brand" value="Nissan">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputcolor">Color</label>
+                        <input type="text" class="form-control" id="color" name="color" value="Blanc">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="createCar()">Create car</button>
+            </div>
+            <div class="mt-5" id="fwheels" style="display: none">
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputbrand1">Marca Rueda 1</label>
+                        <input type="text" class="form-control" id="wbrand1" name="wbrand1" value="Michelin">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputdiam1">Diámetro Rueda 1</label>
+                        <input type="number" class="form-control" id="wdiam1" name="wdiam1" min="0.4" max="2" step="0.1"
+                            value="0.6">
+                            <label class="form-text text-danger" id="diam1Help"></label>   
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputbrand2">Marca Rueda 2</label>
+                        <input type="text" class="form-control" id="wbrand2" name="wbrand2" value="DLC">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputdiam2">Diámetro Rueda 2</label>
+                        <input type="number" class="form-control" id="wdiam2" name="wdiam2" min="0.4" max="2" step="0.1"
+                            value="0.5">
+                            <label class="form-text text-danger" id="diam2Help"></label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputbrand3">Marca Rueda 3</label>
+                        <input type="text" class="form-control" id="wbrand3" name="wbrand3" value="Michelin">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputdiam3">Diámetro Rueda 3</label>
+                        <input type="number" class="form-control" id="wdiam3" name="wdiam3" min="0.4" max="2" step="0.1"
+                            value="0.4">
+                            <label class="form-text text-danger" id="diam3Help"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputbrand4">Marca Rueda 4</label>
+                        <input type="text" class="form-control" id="wbrand4" name="wbrand4" value="DLC">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputdiam4">Diámetro Rueda 4</label>
+                        <input type="number" class="form-control" id="wdiam4" name="wdiam4" min="0.4" max="2" step="0.1"
+                            value="0.5">
+                            <label class="form-text text-danger" id="diam4Help"></label>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="addWheels()">Add Wheels</button>
+            </div>
+        </div>
+
+        <div class="container" id="carInfo" style="display: none">
+            <label>Car:</label><br>
+            <div class='row'>
+                <div class='col-3'>
+                    Plate: <div id="plateInfo" class="ib"> </div>
+                </div>
+                <div class='col-3'>
+                    Brand: <div id="brandInfo" class="ib"> </div>
+                </div>
+                <div class='col-3'>
+                    Color: <div id="colorInfo" class="ib"> </div>
+                </div>
+            </div><br>
+            <label>Wheels: </label><br>
+            <div class='row'>
+                <div class='col-3'>
+                    Wheel 1: Brand:<div id="wheel1"> </div>
+                </div>
+                <div class='col-3'>
+                    Wheel 2: Brand:<div id="wheel2"> </div>
+                </div>
+                <div class='col-3'>
+                    Wheel 3: Brand:<div id="wheel3"> </div>
+                </div>
+                <div class='col-3'>
+                    Wheel 4: Brand:<div id="wheel4"> </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
